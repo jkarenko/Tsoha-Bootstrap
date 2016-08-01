@@ -11,3 +11,45 @@ Järjestelmä toteutetaan PHP-ohjelmointikielellä, PostgreSQL tietokannalla ja 
 
 ##### Käyttötapauskaavio
 ![käyttötapauskaavio](https://raw.githubusercontent.com/jkarenko/Tsoha-Bootstrap/master/doc/user.png)
+
+##### Käyttäjäryhmät
+```
+user
+  Rekisteröitynyt sovelluksen käyttäjä.
+
+admin
+  Järjestelmän valvoja.
+```
+
+##### Käyttötapauskuvaukset
+```
+user
+
+  kyydin luominen
+    Käyttäjä valitsee ajankohdan, lähtöpaikan, määränpään
+    ja kirjoittaa vapaan viestin.
+
+  kyytien selaaminen
+    Käyttäjä näkee kaikki järjestelmään luodut kyydit jotka eivät
+    ole menneisyydessä.
+
+  kyytiin ilmoittautuminen
+    Käyttäjä voi ilmoittautua kyytiin jossa on tilaa, käyttäjä
+    lisätään kyydin matkustajaluetteloon.
+
+  kyydin muokkaaminen ja poistaminen
+    Käyttäjä voi muokata itse luomansa kyydin tietoja tai poistaa
+    kyydin kokonaan järjestelmästä.
+```
+```
+admin
+
+  kyytien selaaminen
+    Admin näkee kaikki järjestelmän kyydit, myös menneet.
+
+  kyydin poistaminen
+    Admin voi poistaa kyydin järjestelmästä.
+
+  käyttäjän disablointi
+    Admin voi poistaa käyttäjän tilin käytöstä.
+```
