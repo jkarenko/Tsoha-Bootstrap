@@ -10,4 +10,4 @@ Järjestelmä toteutetaan PHP-ohjelmointikielellä, PostgreSQL tietokannalla ja 
 #### 2. Yleiskuva järjestelmästä
 
 ##### Käyttötapauskaavio
-![käyttötapauskaavio](https://github.com/jkarenko/Tsoha-Bootstrap/tree/master/doc/user.png)
+![käyttötapauskaavio](https://raw.githubusercontent.com/jkarenko/Tsoha-Bootstrap/master/doc/user.png)
