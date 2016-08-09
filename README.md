@@ -8,3 +8,10 @@ Yleisiä linkkejä:
 ## Työn aihe
 
 Sovellus jonka avulla käyttäjät voivat sopia kimppakyytejä.
+
+## Käyttöliittymän mockup
+Etusivu/kyytilista: http://jkarenko.users.cs.helsinki.fi/tsoha/  
+Kyydin tiedot: http://jkarenko.users.cs.helsinki.fi/tsoha/ride/1  
+Uuden kyydin luonti: http://jkarenko.users.cs.helsinki.fi/tsoha/ride/create  
+Sisäänkirjautuminen: http://jkarenko.users.cs.helsinki.fi/tsoha/user/login  
+Viestin kirjoittaminen:  

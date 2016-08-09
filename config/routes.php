@@ -31,6 +31,6 @@ $routes->get('/ride/create', function(){
 
 
 // user
-  $routes->get('/user/login.html', function(){
+  $routes->get('/user/login', function(){
     UserController::show_login();
   });
