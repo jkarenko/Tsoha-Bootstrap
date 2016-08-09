@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-1"></div>
+<div class="col-md-3">
+  <h1>Kyydit</h1>
+
+    <!-- alkuperäinen ruby-hässäkkä muistiapuna -->
+    <!-- <% @rides.order('start_time ASC').each do |ride| %>
+    <div class="row">
+      <div class="well" style="background-color:<%= ride.driver_id == nil ? 'lightyellow' : 'lightgreen' %>">
+        <%= link_to Place.find(ride.from_place_id).name, place_path(ride.from_place_id), style: "color: inherit" %>
+        <%= link_to Place.find(ride.to_place_id).name, place_path(ride.to_place_id), style: "color: inherit" %>
+        <%= ride.start_time %>
+        <%= link_to 'Tiedot', ride %>
+      </div>
+    </div>
+    <% end %>
+  </div> -->
+  {% for i in 1..10 %}
+  <div class="row">
+    <a href="{{base_path}}/ride/{{i}}">
+      <div class="well">
+        asdasdasd
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

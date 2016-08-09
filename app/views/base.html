@@ -24,7 +24,6 @@
 
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
-
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -33,13 +32,18 @@
             <span class="icon-bar"></span>
           </button>
           <!-- Sovelluksen nimi -->
-          <a class="navbar-brand" href="{{base_path}}">Tsoha Bootstrap</a>
+          <a class="navbar-brand" href="{{base_path}}/">Kimppakyyti</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="nav navbar-nav">
             <!-- Navigaation linkit -->
-            <li><a href="{{base_path}}">Etusivu</a></li>
+            <li><a href="{{base_path}}/ride">Kyydit</a></li>
+            <li><a href="{{base_path}}/ride/create">Uusi kyyti</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{base_path}}/user/login.html">Kirjaudu sisään</a></li>
           </ul>
         </div>
       </div>

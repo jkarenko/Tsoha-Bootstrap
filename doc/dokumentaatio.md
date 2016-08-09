@@ -53,3 +53,12 @@ admin
   käyttäjän disablointi
     Admin voi poistaa käyttäjän tilin käytöstä.
 ```
+
+#### 3. Järjestelmän tietosisältö
+
+![Käsitekaavio](https://raw.githubusercontent.com/jkarenko/Tsoha-Bootstrap/master/doc/class1.png)
+
+
+#### 4. Relaatiotietokantakaavio
+
+![Tietokantakaavio](https://raw.githubusercontent.com/jkarenko/Tsoha-Bootstrap/master/doc/db1.png)

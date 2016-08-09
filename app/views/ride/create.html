@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action=''>
+  <div class='row'>
+    <div class='col-md-1'></div>
+      <div class='col-md-3'>
+        <h1>Uusi kyyti</h1>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-1'></div>
+    <div class='field'>
+      <div class='col-md-1'>
+        Olen
+      </div>
+      <div class='col-md-2'>
+
+          <input type='checkbox' name='driver'> Kuljettaja
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-1'></div>
+    <div class='field'>
+      <div class='col-md-1'>
+        Lähtöpaikka
+      </div>
+      <div class='col-md-2'>
+        <input type="textbox" placeholder="Kaupunki">
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-1'></div>
+    <div class='field'>
+      <div class='col-md-1'>
+        Määränpää
+      </div>
+      <div class='col-md-2'>
+        <input type="textbox" placeholder="Kaupunki">
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-1'></div>
+    <div class='col-md-1'>
+      Lähtöaika
+    </div>
+    <div class='col-md-2'>
+      <input type="textbox" placeholder="2016-10-27 15:30">
+      <!-- <script>
+        $(function() {
+          $( "#starttime" ).datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            dateFormat: 'yy-mm-dd'
+          }).val();
+        });
+      </script> -->
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-1'></div>
+
+    <div class='actions'>
+      <div class='col-md-1'>
+        <input type="submit" value="Luo kyyti">
+      </div>
+    </div>
+  </div>
+{% endblock %}
