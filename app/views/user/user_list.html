@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Käyttäjät</h1>
+
+  <!-- Kaikki lomakkeen elementit form-tagin sisään -->
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th><th>Nimi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for person in persons %}
+        <tr>
+          <td>{{person.id}}</td><td>{{person.name}}</td>
+          <td><a href="{{base_path}}/user/edit/{{person.id}}" class="btn btn-warning">edit</button>
+          <a href="{{base_path}}/user/{{person.id}}" class="btn btn-danger">del</button></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

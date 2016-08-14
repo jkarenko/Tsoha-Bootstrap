@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action=''>
+<form method="post" action="{{base_path}}/ride">
   <div class='row'>
     <div class='col-md-1'></div>
       <div class='col-md-3'>
@@ -17,7 +17,6 @@
       <div class='col-md-2'>
 
           <input type='checkbox' name='driver'> Kuljettaja
-        </form>
       </div>
     </div>
   </div>
@@ -28,7 +27,7 @@
         Lähtöpaikka
       </div>
       <div class='col-md-2'>
-        <input type="textbox" placeholder="Kaupunki">
+        <input type="textbox" name="from_place" placeholder="Kaupunki">
       </div>
     </div>
   </div>
@@ -39,7 +38,7 @@
         Määränpää
       </div>
       <div class='col-md-2'>
-        <input type="textbox" placeholder="Kaupunki">
+        <input type="textbox" name="to_place" placeholder="Kaupunki">
       </div>
     </div>
   </div>
@@ -49,7 +48,7 @@
       Lähtöaika
     </div>
     <div class='col-md-2'>
-      <input type="textbox" placeholder="2016-10-27 15:30">
+      <input type="textbox" name="depart_time" placeholder="2016-10-27 15:30">
       <!-- <script>
         $(function() {
           $( "#starttime" ).datepicker({
@@ -70,4 +69,6 @@
       </div>
     </div>
   </div>
+</form>
+
 {% endblock %}

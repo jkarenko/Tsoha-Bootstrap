@@ -16,11 +16,11 @@
     </div>
     <% end %>
   </div> -->
-  {% for i in 1..10 %}
+  {% for ride in rides %}
   <div class="row">
-    <a href="{{base_path}}/ride/{{i}}">
+    <a href="{{base_path}}/ride/{{ride.id}}">
       <div class="well">
-        asdasdasd
+        {{ride.from_place}}-{{ride.to_place}}<br>{{ride.depart_time}}
       </div>
     </a>
   </div>
