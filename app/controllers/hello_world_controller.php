@@ -11,6 +11,14 @@
     public static function sandbox(){
       // Testaa koodiasi täällä
       // echo 'Hello World!';
+      $ride = new Ride(array(
+        'from_place' => '',
+        'to_place' => 'utsjoki',
+        'depart_time' => '2017-01-01 12:42asd'
+      ));
+      $errors = $ride->errors();
+
+      Kint::dump($errors);
       View::make('helloworld.html');
     }
 

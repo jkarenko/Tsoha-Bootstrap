@@ -40,6 +40,10 @@ $routes->get('/user/list', function(){
   UserController::list_users();
 });
 
+$routes->get('/users', function(){
+  UserController::list_users();
+});
+
 $routes->get('/user/:id', function($id){
   UserController::find_by_id($id);
 });

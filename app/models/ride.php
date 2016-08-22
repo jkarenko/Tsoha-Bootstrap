@@ -6,6 +6,7 @@
 
     public function __construct($attributes){
       parent::__construct($attributes);
+      $this->validators = array('validate_from_place', 'validate_to_place', 'validate_depart_time');
     }
 
     public static function all(){
@@ -45,4 +46,30 @@
       $row = $query->fetch();
       $this->id = $row['id'];
     }
+
+
+    public function validate_from_place() {
+      return $this->validate_string($this->from_place);
+    }
+
+    public function validate_to_place() {
+      return $this->validate_string($this->to_place);
+    }
+
+    public function validate_string($str){
+      $errors = array();
+      if($str == '' || $str == null){
+        $errors[] = 'Tyhjä merkkijono.';
+      }
+      return $errors;
+    }
+
+    public function validate_depart_time(){
+      $errors = array();
+      if(!DateTime::createFromFormat('Y-m-d H:i', $this->depart_time)){
+        $errors[] = "Virheellinen päivämäärä.";
+      }
+      return $errors;
+    }
+
   }
