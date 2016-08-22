@@ -20,12 +20,21 @@
 
     public static function create(){
       $params = $_POST;
-      $ride = new Ride(Array(
+      $attributes = array(
         'from_place' => $params['from_place'],
         'to_place' => $params['to_place'],
         'depart_time' => $params['depart_time'],
-      ));
-      $ride->save();
-      Redirect::to('/ride/' . $ride->id, array('message' => 'kyyti lisätty'));
+      );
+      $ride = new Ride($attributes);
+
+      $errors = $ride->errors();
+      if(count($errors) == 0){
+        $ride->save();
+        Redirect::to('/ride/' . $ride->id, array('message' => 'kyyti lisätty'));
+      }else{
+        View::make('ride/new.html', array('errors' => $errors, 'attributes' => $attributes));
+      }
+
+
     }
   }
