@@ -63,8 +63,10 @@ admin
 
 ![Tietokantakaavio](https://raw.githubusercontent.com/jkarenko/Tsoha-Bootstrap/master/doc/db1.png)
 
-#### 5. Käynnistysohje
+#### 5. Käynnistys ja asentaminen
 
-Järjestelmä toimii osoitteessa http://jkarenko.users.cs.helsinki.fi/tsoha/
+Järjestelmä toimii osoitteessa http://jkarenko.users.cs.helsinki.fi/tsoha/.  
+Testikäyttötunnus on `Archer` ja salasana `phrasing`.  
 
-Testikäyttötunnus on `Archer` ja salasana `phrasing`
+Sovellus vaatii ympäristöltään PHP-tuen, MySQL tai PostgreSQL tietokannan, sekä http-palvelimen.  
+Aseta tietokantasi tiedot tiedostoon ./config/database.php.
