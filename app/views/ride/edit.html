@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method="post" action="{{base_path}}/ride">
+<form method="post" action="{{base_path}}/ride/{{ride.id}}">
   <div class='row'>
     <div class='col-md-1'></div>
       <div class='col-md-3'>
@@ -38,7 +38,7 @@
         Lähtöpaikka
       </div>
       <div class='col-md-2'>
-        <input type="textbox" name="from_place" placeholder="Kaupunki">
+        <input type="textbox" name="from_place" placeholder="Kaupunki" value="{{ride.from_place}}">
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@
         Määränpää
       </div>
       <div class='col-md-2'>
-        <input type="textbox" name="to_place" placeholder="Kaupunki">
+        <input type="textbox" name="to_place" placeholder="Kaupunki" value="{{ride.to_place}}">
       </div>
     </div>
   </div>
@@ -59,10 +59,10 @@
       Lähtöaika
     </div>
     <div class='col-md-2'>
-      <input type="textbox" id="depart_time" name="depart_time" placeholder="2016-10-27 15:30:00">
+      <input type="textbox" name="depart_time" placeholder="2016-10-27 15:30:00" value="{{ride.depart_time}}">
       <!-- <script>
         $(function() {
-          $( "#depart_time" ).datepicker({
+          $( "#starttime" ).datepicker({
             showOtherMonths: true,
             selectOtherMonths: true,
             dateFormat: 'yy-mm-dd'
@@ -76,10 +76,9 @@
 
     <div class='actions'>
       <div class='col-md-1'>
-        <input type="submit" value="Luo kyyti">
+        <input type="submit" value="Tallenna muutokset">
       </div>
     </div>
   </div>
 </form>
-
 {% endblock %}

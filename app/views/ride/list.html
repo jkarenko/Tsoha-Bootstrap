@@ -1,30 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="col-md-1"></div>
-<div class="col-md-3">
-  <h1>Kyydit</h1>
+<h1>Kyydit</h1>
 
-    <!-- alkuperäinen ruby-hässäkkä muistiapuna -->
-    <!-- <% @rides.order('start_time ASC').each do |ride| %>
-    <div class="row">
-      <div class="well" style="background-color:<%= ride.driver_id == nil ? 'lightyellow' : 'lightgreen' %>">
-        <%= link_to Place.find(ride.from_place_id).name, place_path(ride.from_place_id), style: "color: inherit" %>
-        <%= link_to Place.find(ride.to_place_id).name, place_path(ride.to_place_id), style: "color: inherit" %>
-        <%= ride.start_time %>
-        <%= link_to 'Tiedot', ride %>
-      </div>
-    </div>
-    <% end %>
-  </div> -->
-  {% for ride in rides %}
-  <div class="row">
-    <a href="{{base_path}}/ride/{{ride.id}}">
-      <div class="well">
-        {{ride.from_place}}-{{ride.to_place}}<br>{{ride.depart_time}}
-      </div>
-    </a>
-  </div>
-  {% endfor %}
+{% if message %}
+<div class="alert alert-success">
+{{message}}
+</div>
+{% endif %}
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>from</th><th>to</th><th>time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ride in rides %}
+      <tr>
+
+        <td>{{ride.from_place}}</td><td>{{ride.to_place}}</td><td>{{ride.depart_time}}</td>
+        <td><a href="{{base_path}}/ride/{{ride.id}}" class="btn btn-default">view</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 {% endblock %}

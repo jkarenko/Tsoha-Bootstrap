@@ -58,6 +58,20 @@
     {% block body %}
       <!-- jQuery -->
       <script src="{{base_path}}/vendor/jquery.min.js"></script>
+      <script src="{{base_path}}/vendor/jquery.datetimepicker.min.js"></script>
+      <link href="{{base_path}}/vendor/jquery.datetimepicker.css" rel="stylesheet">
+
+
+      <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+      <script>
+        $(function() {
+          $( "#depart_time" ).datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            dateFormat: 'yy-mm-dd'
+          }).val();
+        });
+      </script>
 
       <!-- Bootstrap (skriptitiedosto) -->
       <script src="{{base_path}}/vendor/bootstrap/js/bootstrap.min.js"></script>

@@ -30,6 +30,18 @@ $routes->post('/ride', function(){
   RideController::create();
 });
 
+$routes->get('/ride/:id/edit', function($id){
+  RideController::edit($id);
+});
+
+$routes->post('/ride/:id', function($id){
+  RideController::update($id);
+});
+
+$routes->post('/ride/:id/delete', function($id){
+  RideController::destroy($id);
+});
+
 
 // user
 $routes->get('/user/login', function(){

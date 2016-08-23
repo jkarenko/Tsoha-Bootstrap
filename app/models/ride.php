@@ -7,6 +7,7 @@
     public function __construct($attributes){
       parent::__construct($attributes);
       $this->validators = array('validate_from_place', 'validate_to_place', 'validate_depart_time');
+      // $this->validators = array();
     }
 
     public static function all(){
@@ -47,6 +48,16 @@
       $this->id = $row['id'];
     }
 
+    public function update(){
+      $query = DB::connection()->prepare('update kyyti set from_place=:from_place, to_place=:to_place, depart_time=:depart_time where id=:id');
+      $query->execute(array('from_place' => $this->from_place, 'to_place' => $this->to_place, 'depart_time' => $this->depart_time, 'id' => $this->id));
+    }
+
+    public function destroy(){
+      $query = DB::connection()->prepare('delete from kyyti where id=:id');
+      $query->execute(array('id' => $this->id));
+    }
+
 
     public function validate_from_place() {
       return $this->validate_string($this->from_place);
@@ -66,7 +77,7 @@
 
     public function validate_depart_time(){
       $errors = array();
-      if(!DateTime::createFromFormat('Y-m-d H:i', $this->depart_time)){
+      if(!DateTime::createFromFormat('Y-m-d H:i:s', $this->depart_time)){
         $errors[] = "Virheellinen päivämäärä.";
       }
       return $errors;
