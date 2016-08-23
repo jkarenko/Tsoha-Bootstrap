@@ -48,6 +48,10 @@ $routes->get('/user/login', function(){
   UserController::show_login();
 });
 
+$routes->post('/user/login', function(){
+  UserController::handle_login();
+});
+
 $routes->get('/user/list', function(){
   UserController::list_users();
 });

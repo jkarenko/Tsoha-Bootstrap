@@ -62,3 +62,9 @@ admin
 #### 4. Relaatiotietokantakaavio
 
 ![Tietokantakaavio](https://raw.githubusercontent.com/jkarenko/Tsoha-Bootstrap/master/doc/db1.png)
+
+#### 5. Käynnistysohje
+
+Järjestelmä toimii osoitteessa http://jkarenko.users.cs.helsinki.fi/tsoha/
+
+Testikäyttötunnus on `Archer` ja salasana `phrasing`

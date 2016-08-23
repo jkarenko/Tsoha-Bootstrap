@@ -39,5 +39,18 @@
       }
     }
 
+    public static function authenticate_user($name, $password){
+      $query = DB::connection()->prepare('SELECT id FROM person WHERE name = :name AND password = :password LIMIT 1');
+      $query->execute(array('name' => $name, 'password' => $password));
+      $row = $query->fetch();
+      if($row){
+        // Käyttäjä löytyi, palautetaan löytynyt käyttäjä oliona
+        return self::find_by_id($row['id']);
+      }else{
+        // Käyttäjää ei löytynyt, palautetaan null
+        return null;
+      }
+    }
+
 
   }

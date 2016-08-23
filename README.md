@@ -15,3 +15,10 @@ Kyydin tiedot: http://jkarenko.users.cs.helsinki.fi/tsoha/ride/1
 Uuden kyydin luonti: http://jkarenko.users.cs.helsinki.fi/tsoha/ride/create  
 Sisäänkirjautuminen: http://jkarenko.users.cs.helsinki.fi/tsoha/user/login  
 Viestin kirjoittaminen:  
+
+
+## Testitunnus
+```
+name: Archer
+pass: phrasing
+```
