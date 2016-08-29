@@ -56,6 +56,10 @@ $routes->post('/user/login', function(){
   UserController::handle_login();
 });
 
+$routes->post('/user/logout', function(){
+  UserController::logout();
+});
+
 $routes->get('/user/list', 'check_logged_in', function(){
   UserController::list_users();
 });

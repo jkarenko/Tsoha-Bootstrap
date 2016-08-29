@@ -16,11 +16,11 @@ CREATE TABLE Kyyti(
 CREATE TABLE Viesti(
   id SERIAL PRIMARY KEY,
   text varchar(1000) NOT NULL,
-  person_id INTEGER REFERENCES Person(id),
-  kyyti_id INTEGER REFERENCES Kyyti(id)
+  person_id INTEGER REFERENCES Person(id) on delete cascade,
+  kyyti_id INTEGER REFERENCES Kyyti(id) on delete cascade
 );
 
 CREATE TABLE Person_Kyyti(
-  person_id INTEGER REFERENCES Person(id),
-  kyyti_id INTEGER REFERENCES Kyyti(id)
+  person_id INTEGER REFERENCES Person(id) on delete cascade,
+  kyyti_id INTEGER REFERENCES Kyyti(id) on delete cascade
 );

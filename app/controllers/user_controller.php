@@ -20,6 +20,11 @@ class UserController extends BaseController{
     }
   }
 
+  public static function logout(){
+    $_SESSION['user'] = null;
+    Redirect::to('/ride', array('message' => 'Olet kirjautunut ulos!'));
+  }
+
   public static function list_users(){
     $persons = Person::all();
     View::make('user/user_list.html', array('persons' => $persons));
