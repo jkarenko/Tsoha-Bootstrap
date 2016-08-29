@@ -1,5 +1,9 @@
 <?php
 
+function check_logged_in(){
+  BaseController::check_logged_in();
+}
+
 $routes->get('/', function(){
   RideController::list_rides();
 });
@@ -10,7 +14,7 @@ $routes->get('/hiekkalaatikko', function(){
 
 
 // ride
-$routes->get('/ride/new', function(){
+$routes->get('/ride/new', 'check_logged_in', function(){
   RideController::new_ride();
 });
 
@@ -26,19 +30,19 @@ $routes->get('/rides', function(){
   RideController::list_rides();
 });
 
-$routes->post('/ride', function(){
+$routes->post('/ride', 'check_logged_in', function(){
   RideController::create();
 });
 
-$routes->get('/ride/:id/edit', function($id){
+$routes->get('/ride/:id/edit', 'check_logged_in', function($id){
   RideController::edit($id);
 });
 
-$routes->post('/ride/:id', function($id){
+$routes->post('/ride/:id', 'check_logged_in', function($id){
   RideController::update($id);
 });
 
-$routes->post('/ride/:id/delete', function($id){
+$routes->post('/ride/:id/delete', 'check_logged_in', function($id){
   RideController::destroy($id);
 });
 
@@ -52,14 +56,14 @@ $routes->post('/user/login', function(){
   UserController::handle_login();
 });
 
-$routes->get('/user/list', function(){
+$routes->get('/user/list', 'check_logged_in', function(){
   UserController::list_users();
 });
 
-$routes->get('/users', function(){
+$routes->get('/users', 'check_logged_in', function(){
   UserController::list_users();
 });
 
-$routes->get('/user/:id', function($id){
+$routes->get('/user/:id', 'check_logged_in', function($id){
   UserController::find_by_id($id);
 });

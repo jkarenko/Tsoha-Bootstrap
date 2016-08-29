@@ -13,7 +13,14 @@
 
     {% block head %}
       <!-- Bootstrap (tyylitiedosto) -->
-      <link href="{{base_path}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+      <!-- <link href="{{base_path}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+      <!-- <link href="{{base_path}}/vendor/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet"> -->
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+      <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+      <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
       <!-- Oma tyylitiedostomme -->
       <link href="{{base_path}}/assets/css/site.css" rel="stylesheet">
@@ -60,17 +67,39 @@
       <script src="{{base_path}}/vendor/jquery.min.js"></script>
       <script src="{{base_path}}/vendor/jquery.datetimepicker.min.js"></script>
       <link href="{{base_path}}/vendor/jquery.datetimepicker.css" rel="stylesheet">
-
+      <link src="{{base_path}}/vendor/bootstrap/js/bootstrap-datettimepicker.min.js" rel="stylesheet">
 
       <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-      <script>
+
+
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+      </script>
+      <script type="text/javascript"
+        src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+      </script>
+      <script type="text/javascript"
+        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+      </script>
+      <script type="text/javascript"
+        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+      </script>
+
+      <script type="text/javascript">
+        // $(function() {
+        //   $( "#depart_time" ).datepicker({
+        //     showOtherMonths: true,
+        //     selectOtherMonths: true,
+        //     dateFormat: 'yy-mm-dd'
+        //   }).val();
+        // });
+
         $(function() {
-          $( "#depart_time" ).datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            dateFormat: 'yy-mm-dd'
-          }).val();
+          $('#datetimepicker1').datetimepicker({
+            language: 'fi-FI'
+          });
         });
+
       </script>
 
       <!-- Bootstrap (skriptitiedosto) -->
