@@ -58,18 +58,12 @@
     <div class='col-md-1'>
       Lähtöaika
     </div>
-    <div class='col-md-2'>
-      <input type="textbox" id="depart_time" name="depart_time" placeholder="2016-10-27 15:30:00">
-      <!-- <script>
-        $(function() {
-          $( "#depart_time" ).datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            dateFormat: 'yy-mm-dd'
-          }).val();
-        });
-      </script> -->
-    </div>
+      <div id="datetimepicker1" class="col-md-3">
+        <input type="textbox" id="depart_time" name="depart_time" value="{{ride.depart_time}}" placeholder="yyyy-MM-dd hh:mm:ss" data-format="yyyy-MM-dd hh:mm:ss"></input>
+        <span class="add-on icon-calendar">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+        </span>
+      </div>
   </div>
   <div class='row'>
     <div class='col-md-1'></div>
