@@ -70,3 +70,20 @@ Testikäyttötunnus on `Archer` ja salasana `phrasing`.
 
 Sovellus vaatii ympäristöltään PHP-tuen, MySQL tai PostgreSQL tietokannan, sekä http-palvelimen.  
 Aseta tietokantasi tiedot tiedostoon ./config/database.php.
+
+#### 6. Järjestelmän yleisrakenne
+
+Järjestelmä noudattaa MVC-mallia ja komponentit on pääsääntöisesti jaettu models, controllers ja views hakemistoihin app -hakemiston sisällä.  
+
+Sen lisäksi löytyy:  
+
+- assets: järjestelmän omat JavaScript kirjastot ja CSS-tiedostot  
+- vendor: kolmannen osapuolen kirjastot ja tyylitiedostot
+- doc: dokumentaatio
+- config: ympäristömuuttujat, reititys, tietokannan tiedot
+- sql: tietokannan luomiseen tarvittavat komennot
+
+
+#### 7. Käyttöliittymä ja järjestelmän komponentit
+
+![Komponentit](https://raw.githubusercontent.com/jkarenko/Tsoha-Bootstrap/master/doc/sivut.png)
