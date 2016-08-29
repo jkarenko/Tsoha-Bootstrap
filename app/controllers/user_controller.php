@@ -38,7 +38,7 @@ class UserController extends BaseController{
 
   public static function get_person_rides($id){
     $rides = Person::get_person_rides($id);
-    Kint::dump($rides);
+    // Kint::dump($rides);
     View::make('user/show.html', array('rides' => $rides));
   }
 }

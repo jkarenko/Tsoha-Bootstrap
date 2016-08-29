@@ -38,6 +38,10 @@ $routes->get('/ride/:id/edit', 'check_logged_in', function($id){
   RideController::edit($id);
 });
 
+$routes->get('/ride/:id/join', 'check_logged_in', function($id){
+  RideController::join($id);
+});
+
 $routes->post('/ride/:id', 'check_logged_in', function($id){
   RideController::update($id);
 });

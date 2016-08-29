@@ -41,6 +41,15 @@
       View::make('ride/edit.html', array('ride' => $ride[0]));
     }
 
+    public static function join($id){
+      Ride::join($id);
+      $ride = Ride::find_by_id($id);
+      // Kint::dump($ride);
+      View::make('ride/show.html', array('ride' => $ride));
+      // Redirect::to('/ride/' . $id, array('ride' => $ride, 'message' => 'ilmoittauduit kyytiin'));
+
+    }
+
     public static function update($id){
       $params = $_POST;
       // Kint::dump($id);

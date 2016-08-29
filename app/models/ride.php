@@ -96,4 +96,10 @@
       return $errors;
     }
 
+    public function join($id){
+      $user_id = $_SESSION['user'];
+      $query = DB::connection()->prepare('insert into person_kyyti (person_id, kyyti_id) values(:user_id, :ride_id)');
+      $query->execute(array('user_id' => $user_id, 'ride_id' => $id));
+    }
+
   }

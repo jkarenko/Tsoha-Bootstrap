@@ -14,8 +14,8 @@
         {% for person in persons %}
         <tr>
           <td>{{person.id}}</td><td>{{person.name}}</td>
-          <td><a href="{{base_path}}/user/edit/{{person.id}}" class="btn btn-warning">edit</button>
-          <a href="{{base_path}}/user/{{person.id}}" class="btn btn-danger">del</button></td>
+          <td><a href="{{base_path}}/user/{{person.id}}" class="btn btn-info">show</button>
+          <!-- <a href="{{base_path}}/user/{{person.id}}" class="btn btn-danger disabled">del</button></td> -->
         </tr>
         {% endfor %}
       </tbody>
