@@ -5,7 +5,7 @@
     public static function show($id){
       $ride = Ride::find_by_id($id);
       // Kint::dump($ride);
-      View::make('ride/show.html', array('ride' => $ride[0]));
+      View::make('ride/show.html', array('ride' => $ride));
     }
 
     public static function list_rides(){

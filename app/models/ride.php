@@ -7,7 +7,6 @@
     public function __construct($attributes){
       parent::__construct($attributes);
       $this->validators = array('validate_from_place', 'validate_to_place', 'validate_depart_time');
-      // $this->validators = array();
     }
 
     public static function all(){
@@ -27,16 +26,30 @@
     }
 
     public static function find_by_id($id){
-      $query = DB::connection()->prepare('select * from kyyti where id = :id limit 1');
+      $query = DB::connection()->prepare("select kyyti.id as id, from_place, to_place, depart_time, name from kyyti
+                                          left join person_kyyti
+                                          on kyyti.id = person_kyyti.kyyti_id
+                                          left join person
+                                          on person_kyyti.person_id = person.id
+                                          where kyyti.id = :id");
       $query->execute(array('id' => $id));
-      $row = $query->fetch();
-      if($row){
+      $rows = $query->fetchAll();
+
+      if($rows){
         $ride[] = new Ride(Array(
-          'id' => $row['id'],
-          'from_place' => $row['from_place'],
-          'to_place' => $row['to_place'],
-          'depart_time' => $row['depart_time'],
+          'id' => $rows[0]['id'],
+          'from_place' => $rows[0]['from_place'],
+          'to_place' => $rows[0]['to_place'],
+          'depart_time' => $rows[0]['depart_time'],
+          'people' => ''
         ));
+        $people = '';
+        foreach($rows as $row){
+          $people = $people . $row['name'] . "\n";
+        }
+        $ride['people'] = $people;
+        // Kint::dump($ride);
+
         return $ride;
       }
     }
