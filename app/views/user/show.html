@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{rides[0].name}}</h1>
+
+{% if message %}
+<div class="alert alert-success">
+{{message}}
+</div>
+{% endif %}
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>from</th><th>to</th><th>time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ride in rides %}
+      <tr>
+
+        <td>{{ride.from_place}}</td><td>{{ride.to_place}}</td><td>{{ride.depart_time}}</td>
+        <td><a href="{{base_path}}/ride/{{ride.id}}" class="btn btn-default">view</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

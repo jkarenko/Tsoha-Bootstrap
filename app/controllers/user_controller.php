@@ -35,4 +35,10 @@ class UserController extends BaseController{
     $person = Person::find_by_id($id);
     // Kint::dump($person);
   }
+
+  public static function get_person_rides($id){
+    $rides = Person::get_person_rides($id);
+    Kint::dump($rides);
+    View::make('user/show.html', array('rides' => $rides));
+  }
 }

@@ -69,5 +69,6 @@ $routes->get('/users', 'check_logged_in', function(){
 });
 
 $routes->get('/user/:id', 'check_logged_in', function($id){
-  UserController::find_by_id($id);
+  // UserController::find_by_id($id);
+  UserController::get_person_rides($id);
 });
